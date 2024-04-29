@@ -31,6 +31,7 @@
             position: absolute;
             left: 0;
             width: 100%;
+            transition: 0.5s;
         }
         #animationAllbtn:after{
             bottom: 0;
@@ -42,6 +43,18 @@
             margin: 8px 0;
             width: 100%;
         }
+        #animationAllbtn.show span{
+            width: 0;
+        }        
+        #animationAllbtn.show:before{
+            transform: rotate(-45deg);
+            top: 12px;
+        }
+        #animationAllbtn.show:after{
+            transform: rotate(45deg);
+            top: 13px;
+        }
+
     </style>
 </head>
 
@@ -52,9 +65,51 @@
         </span>
     </button>
     <script>
+        let status = true;
+            document.getElementById("animationAllbtn").addEventListener('click', function(){
+               if(status){
+                document.getElementById("animationAllbtn").classList.add("show");
+                status =false;
+               }else{
+                document.getElementById("animationAllbtn").classList.remove("show");
+                status = true;
+               }
+            })
+
+        // window.addEventListener('load', function(){
+        // document.getElementById("animationAllbtn").addEventListener('click', function(){
+        //   alert("ccc")}
+        // )})
+
         // document.body
         // document.head
-        document.getElementById("animationAllbtn")
-    </script>
+
+
+        // 개발 시나리오
+
+        // 화면의 아이디가 animationAllbtn 객체를 클릭하면 경고창 떠라
+
+        // 화면의 아이디가 animationAllbtn 객체 명령 받아라
+        // document.getElementById(" ").addEventListener(' ', function(){}
+        // document.getElementById("animationAllbtn").addEventListener('click', function(){
+        //       alert("ccc")
+        // })
+
+
+        // document.getElementById("gnb").addEventListener('click', function(){
+        //     alert("나 혼자 한 자바스크립트")
+        // })
+
+        // 아이디가 allmenu를 클릭하면 
+        // 아이디가 gnb에게 나타난다.
+        // document.getElementById("allmenu").addEventListener(click, function(){
+        //      document.getElementById('gnd').style.display = "block"
+        //      document.getElementById('cross').style.backgroundColor = "red"
+        // })
+
+
+        // 개발 시나리오
+
+        </script>
 </body>
 </html>
