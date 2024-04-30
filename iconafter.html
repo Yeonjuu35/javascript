@@ -17,12 +17,19 @@
     <script>
         const allbtn = document.getElementById("allbtn");
         // const 뒤쪽은 변수로 숫자,띄어쓰기 사용 금지ㅣ언더바,특수문자 가능ㅣ대소문자 구분 안됨
-        // const 는 상수로 뒤쪽 변수가 바뀔 수 없지만 let은 반대로 뒤쪽 변수가 바뀔 수 있다
+        // const 는 상수로 한번 지정한 뒤쪽 변수가 바뀔 수 없지만 let은 반대로 뒤쪽 변수가 바뀔 수 있다
+        // 그래서 const보다 let의 용량이 크다(미래에 바뀔 수 있기 때문에 저장 크기를 크게 갖게됨)
         // 파이썬, 프론트앤드는 대소문자 구분 ㅣ 백앤드는 구분 안함
         // 여기서 = 은 대입하다, 저장하다로 번역하기
         allbtn.addEventListener("click",function(){
+            allbtn.classList.toggle("bi-x-lg")
 
-        })
+            if (allbtn.classList.contains("bi-x-lg")) {
+            allbtn.style.color = "red";
+            } else {
+            allbtn.style.color = "black";
+            }
+        });
     </script>
 </body>
 
