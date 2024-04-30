@@ -8,14 +8,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
     <style>
         .img-fleid{
-            max-width: 100%;
+            max-width: 100%; 
+            /* 반응형 구현에 필수 max-width */
         }
+        #mainbanner{
+            background-image: url("./img/bg.png");
+            height: 100vw;
+            max-height: 800px;
+            /* 반응형 할때는 원래 이미지의 높이를 max-height에 적어주기 */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 100%;
+            /* 반응형은 background-size로 x축과 y축을 따로 관리해주기 */
+            transition: 0.5s;
+            color: white;
+            font-size: 80px;
+            /* absolute 사용을 최대한 줄이고 d-flex를 활용하기 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #mainbanner:hover{
+            background-size: auto 150%;
+        }
+        @media (max-width:991px) {
+            h2 span{
+                display: none;
+            }
+        }
+        /* 
+        함수는 ()가 항상 존재
+        반응형에서 굉장히 중요 
+        */
     </style>
 </head>
 
 <body>
     <div id="mainbanner">
-        <img src="./img/bg.png" class="img-fleid" alt="bg">
+        <!-- <img src="./img/bg.png" class="img-fleid" alt="bg"> -->
+        <h2>삼양홀딩스<span>에 오신것을 환영합니다.</span></h2>
+        <!-- 
+            반응형을 제작할때 컨텐츠가 2줄 이상으로 나와서 전체적인 디자인이 깨질 수 있다(줄밀림)
+            이럴때 중요문장이 아닌 부분을 span을 사용해서 디바이스 사이즈에 따라 on/off 해서 디자인에 맞출 수 있다
+            span은 명령이 들어가는 구분점을 만들 수 있다 
+        -->
     </div>
 </body>
 </html>
